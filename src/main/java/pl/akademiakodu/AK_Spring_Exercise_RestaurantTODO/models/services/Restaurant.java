@@ -4,12 +4,10 @@ package pl.akademiakodu.AK_Spring_Exercise_RestaurantTODO.models.services;
  * Imports section
  */
 
-import groovy.transform.ToString;
 import org.springframework.stereotype.Service;
 import pl.akademiakodu.AK_Spring_Exercise_RestaurantTODO.models.Meal;
 import pl.akademiakodu.AK_Spring_Exercise_RestaurantTODO.models.MealDatabase;
 import pl.akademiakodu.AK_Spring_Exercise_RestaurantTODO.models.OrderR;
-import pl.akademiakodu.AK_Spring_Exercise_RestaurantTODO.models.UserRequest;
 
 import java.util.List;
 
@@ -48,7 +46,7 @@ public class Restaurant {
     public int calculateOrderPrice(OrderR orderR) {
         int sum = 0;
         for (Meal meal:orderR.getMealList()) {
-            sum = +meal.getPrice();
+            sum +=meal.getPrice();
             }
         return sum;
     }
